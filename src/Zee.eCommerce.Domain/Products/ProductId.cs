@@ -10,4 +10,7 @@ public class ProductId
     protected ProductId() { }
 
     public ProductId(Guid value) => Value = value;
+
+    public static implicit operator Guid(ProductId self) => self.Value;
+    public static implicit operator ProductId(string value) => new ProductId(Guid.Parse(value));
 }
