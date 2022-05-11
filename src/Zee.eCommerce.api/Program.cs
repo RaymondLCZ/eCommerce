@@ -1,4 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using Zee.eCommerce.Api.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("eCommerceConnection");
+builder.Services.AddDbContext<EDbContext>(options =>
+{
+    options.UseNpgsql(connectionString);
+    options.EnableSensitiveDataLogging();
+});
 
 // Add services to the container.
 
