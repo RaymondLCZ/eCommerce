@@ -9,9 +9,8 @@ public class ProductCommandApi : ControllerBase
 {
     #region actions
     [HttpPost("")]
-    public async Task<IActionResult> PostAsync()
+    public async Task<IActionResult> PostAsync(Commands.V1.Create request)
     {
-        
         return new OkResult();
     }
     #endregion
