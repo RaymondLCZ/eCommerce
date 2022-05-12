@@ -10,9 +10,9 @@ services:
     - POSTGRES_USER=eCommerce
     - POSTGRES_PASSWORD=P@ssword
     - POSTGRES_HOST_AUTH_METHOD=trust
-    - POSTGRES_DB=eCommerce                    # 指定 PostgreSQL 預設資料庫，如不指定則會使用 POSTGRES_USER 的值建立預設資料庫
+    - POSTGRES_DB=eCommerce              # 指定 PostgreSQL 預設資料庫，如不指定則會使用 POSTGRES_USER 的值建立預設資料庫
     ports:                               # 指定本機的 Port 對應 Container 的 Port, 格式: HOST:CONTAINER
-    - 5432:5432
+    - 5431:5432
     volumes:                             # 掛載 docker 的 volume
     #- ./db/:/docker-entrypoint-initdb.d  # ./db/ 指相對路徑下 db 這個資料夾；/docker-entrypoint-initdb.d 指 docker 的進入點
     - db:/var/lib/postgresql/data        # db 指向 volume 名稱
